@@ -1,0 +1,367 @@
+/* ---- VARIABLES ---- */
+:root {
+    --teal: #007d7b;
+    --small-width: 485px;
+    --medium-width: 880px;
+    --large-width: 1300px;
+}
+
+/* ---- GLOBAL STYLES ---- */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background-color: black;
+}
+
+body {
+    margin: 0 auto;
+    /* width: 485px; */
+    width: var(--small-width);
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+    position: relative;
+}
+
+p {
+    font-size: 1.25em;
+}
+
+figcaption, label, input, small {
+    font-size: 1em;
+}
+
+h2 {
+    font-size: 2em;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/* ---- HEADER STYLES ---- */
+h1 {
+    font-size: 3em;
+    color: var(--teal);
+    text-align: center;
+    text-transform: uppercase;
+    padding: 5px;
+}
+
+
+/* START NAV STYLES */
+nav {
+    background-color: black;
+    padding: 20px 0;
+}
+
+nav h2 {
+    visibility: hidden;
+    height: 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    list-style: none;
+}
+
+nav a {
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: white; 
+    padding: 10px;
+    margin: 0 5px;
+    border: solid 2px black;
+}
+
+nav li:last-child a {
+    position: fixed;
+    bottom: 0;
+    right: 9px;
+    border: solid 2px white;
+    color: white;
+    background-color: black;
+    width: 70px;
+    z-index: 100;
+}
+
+nav a:hover {
+    border: solid 2px white;
+}
+
+nav li:last-child a:hover {
+    background-color: white;
+    color: black;
+}
+
+nav a:focus {
+    outline: solid 2px var(--teal);
+}
+
+nav li:last-child a:focus {
+    outline: none;
+    border-color: var(--teal);
+}
+
+nav a:active {
+    outline: none;
+    background-color: var(--teal);
+}
+
+nav li:last-child a:active {
+    outline: none;
+    background-color: var(--teal);
+}
+/* END NAV STYLES */
+
+
+/* ---- MAIN STYLES ---- */
+main {
+    padding-bottom: 10px;
+}
+
+main h2 {
+    padding: 10px 0;
+}
+
+main p {
+    padding: 0 10px;
+    margin: 10px 0;
+}
+
+figure {
+    padding: 0 30px;
+    position: relative;
+    display: grid;
+}
+
+figure img {
+    width: 100%;
+    padding: 10px 0;
+}
+
+figcaption {
+    color: white;
+    position: absolute;
+    text-transform: uppercase;
+    justify-self: center;
+    color: black;
+}
+
+/* Places captions at the bottom */
+:is(figure:nth-of-type(1),
+    figure:nth-of-type(3),
+    figure:nth-of-type(6),
+    figure:nth-of-type(7)) figcaption {
+    bottom: 25px;
+}
+
+/* Places captions at the top */
+:is(figure:nth-of-type(2),
+    figure:nth-of-type(4),
+    figure:nth-of-type(5),
+    figure:nth-of-type(n+8)) figcaption {
+    top: 25px;
+}
+
+/* Sets caption text to white */
+:is(figure:nth-of-type(1),
+    figure:nth-of-type(2),
+    figure:nth-of-type(3),
+    figure:nth-of-type(7),
+    figure:nth-of-type(12)) figcaption {
+    color: white;
+}
+
+
+/* ---- FOOTER STYLES ---- */
+footer {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+}
+
+footer p {
+    text-align: center;
+}
+
+
+/* START CONTACT STYLES */
+#contact h2 {
+    padding-bottom: 10px;
+}
+
+#contact p {
+    padding: 10px 0;
+    margin-bottom: 30px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
+    padding: 0 10px;
+    margin-bottom: 70px;
+}
+
+label {
+    padding-left: 10px;
+}
+
+input {
+    color: var(--teal);
+    font-weight: bold;
+    margin-bottom: 30px;
+    height: 40px;
+    color: rgba(0, 0, 0, 0.85);
+    padding-left: 10px;
+}
+
+input[type="text"]:focus {
+    outline: solid 2px var(--teal);
+}
+
+::placeholder {
+    color: var(--teal);
+    text-transform: uppercase;
+}
+
+input[type="submit"] {
+    color: white;
+    background-color: var(--teal);
+    border-radius: 15px;
+    border: none;
+    /* width: 275px; */
+    width: calc(var(--small-width) * 0.55);
+    margin: 0 auto;
+}
+
+input[type="submit"]:hover {
+    cursor: pointer;
+    background-color: white;
+    color: black;
+}
+
+input[type="submit"]:focus {
+    outline: solid 2px white;
+}   
+
+input[type="submit"]:active {
+    transform: scale(0.9);
+}
+/* END CONTACT STYLES */
+
+
+footer small {
+    text-transform: uppercase;
+}
+
+
+/* ---- MEDIUM SCREEN STYLES ---- */
+@media screen and (min-width: 880px) {
+/* ---- GLOBAL STYLES ---- */
+    body {
+        width: var(--medium-width);
+    }
+
+
+/* ---- HEADER STYLES ---- */
+    h1 {
+        text-align: start;
+    }
+
+
+/* START NAV STYLES */
+    nav li:last-child {
+        visibility: hidden;
+        height: 0;
+    }
+/* END NAV STYLES */
+
+
+/* ---- MAIN STYLES ---- */
+    main h2 {
+        padding: 20px 0 10px 0;
+    }
+
+
+/* START GALLERY STYLES */
+    #gallery {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #gallery h2 {
+        grid-column: 1 / -1;
+    }
+
+    #gallery p {
+        grid-column: 1 / -1;
+        grid-row: 2 / 3;
+    }
+
+    figure {
+        padding: 0 10px;
+    }
+/* END GALLERY STYLES */
+
+
+/* ---- FOOTER STYLES ---- */
+    footer {
+        padding: 10px 60px;
+    }
+
+/* START CONTACT STYLES */
+    input[type="submit"] {
+        width: calc(var(--medium-width) * 0.50);
+    }
+/* END CONTACT STYLES */
+}
+
+
+/* ---- LARGE SCREEN STYLES ---- */
+@media screen and (min-width: 1300px) {
+/* ---- GLOBAL STYLES ---- */
+    body {
+        width: var(--large-width);
+    }
+
+
+/* ---- HEADER STYLES ---- */
+
+/* START GALLERY STYLES */
+    nav ul {
+        justify-content: end;
+    }
+/* END GALLERY STYLES */
+
+
+/* ---- MAIN STYLES ---- */
+
+/* START GALLERY STYLES */
+    #gallery {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+/* END GALLERY STYLES */
+
+
+/* ---- FOOTER STYLES ---- */
+    footer {
+        padding: 10px 120px;
+    }
+
+
+/* START CONTACT STYLES */
+    input[type="submit"] {
+        width: calc(var(--large-width) * 0.6);
+    }
+/* END CONTACT STYLES */
+}
